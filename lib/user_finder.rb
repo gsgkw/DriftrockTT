@@ -2,8 +2,8 @@
 
 class UserFinder
 
-  def initialize(get_user: GetUserData.new)
-    @get_user = get_user
+  def initialize(load_user: GetUserData.new)
+    @load_user = load_user
   end
 
   def find_user(array, email)
@@ -12,12 +12,12 @@ class UserFinder
     end
   end
 
-  def get_users_array
-    @get_user.user_data
+  def load_users_array
+    @load_user.user_data
   end
 
   def find_user_id(email)
-    users_array = get_users_array
+    users_array = load_users_array
     user = find_user(users_array, email)
     p user["id"]
     return user["id"]

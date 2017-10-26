@@ -1,13 +1,13 @@
 
 
 class SpendTracker
-  def initialize(get_purchases: GetPurchasesData.new)
-    @get_purchases = get_purchases
+  def initialize(load_purchases: GetPurchasesData.new)
+    @load_purchases = load_purchases
     @purchases = []
   end
 
-  def get_purchases_array
-    @get_purchases.purchases_data
+  def load_purchases_data
+    @load_purchases.purchases_data
   end
 
   def find_purchases(array, id)
@@ -17,11 +17,11 @@ class SpendTracker
   end
 
   def sum_spent(purchases)
-    purchases.map {|purchase| purchase['spend'].to_f}.reduce(0, :+)
+    purchases.map { |purchase| purchase['spend'].to_f }.reduce(0, :+)
   end
 
   def total_spend(id)
-    @purchases = find_purchases(get_purchases_array, id)
+    @purchases = find_purchases(load_purchases_data, id)
     return sum_spent(@purchases)
   end
 

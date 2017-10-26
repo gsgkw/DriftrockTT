@@ -1,7 +1,7 @@
 require './lib/get_data.rb'
 
 users = []
-purchases = []
+# purchases = []
 users += DataFetcher.get_available("users", users, APICall)
 p users
 

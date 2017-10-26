@@ -12,7 +12,7 @@ class GetUserData
   end
 
   def user_data
-    @users = @data_fetcher.get_available(@users_end, @users, @api)
+    @users = @data_fetcher.load_available(@users_end, @users, @api)
     return @users
   end
 
@@ -30,7 +30,7 @@ class GetPurchasesData
 
   def purchases_data
     @purchases = []
-    @purchases = @data_fetcher.get_available(@purchases_end, @purchases, @api)
+    @purchases = @data_fetcher.load_available(@purchases_end, @purchases, @api)
   end
 end
 
@@ -40,7 +40,7 @@ class DataFetcher
     page * records > received.count
   end
 
-  def self.get_available(destination, local_array, api)
+  def self.load_available(destination, local_array, api)
     received_records = local_array
     page = 0
     records = 1000

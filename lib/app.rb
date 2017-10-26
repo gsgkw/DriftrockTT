@@ -3,11 +3,8 @@ require './spend_tracker.rb'
 require './user_finder.rb'
 require './get_data.rb'
 
-
 customer_email = ARGV[1].gsub(/\[|\]/, '').downcase
 action = ARGV[0]
-
-
 
 case action
   when "find_user_id"
