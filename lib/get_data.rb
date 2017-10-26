@@ -4,7 +4,7 @@ require 'net/http'
 class GetUserData
   attr_reader :users
 
-  def initialize(api = APICall, data_fetcher = DataFetcher)
+  def initialize(api: APICall, data_fetcher: DataFetcher)
     @users = []
     @users_end = "users"
     @api = api
@@ -12,8 +12,8 @@ class GetUserData
   end
 
   def user_data
-    @users = []
     @users = @data_fetcher.get_available(@users_end, @users, @api)
+    return @users
   end
 
 end
@@ -21,7 +21,7 @@ end
 class GetPurchasesData
   attr_reader :purchases
 
-  def initialize(api = APICall, data_fetcher = DataFetcher)
+  def initialize(api: APICall, data_fetcher: DataFetcher)
     @purchases = []
     @purchases_end = "purchases"
     @api = api

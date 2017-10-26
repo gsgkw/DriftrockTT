@@ -1,41 +1,24 @@
 #!/usr/bin/env ruby
+require './customer_tracker.rb'
+require './get_data.rb'
+
 
 customer_email = ARGV[1].gsub(/\[|\]/, '').downcase
 action = ARGV[0]
-app_class = CustomerTracker
+app_instance = CustomerTracker.new
 
-class CustomerTracker
-  def self.find_user_id(email)
-    get_data
-    users_hash = { "guy@g.com" => "abcdefg" }
-    puts users_hash[email]
-  end
-
-  def self.total_spend(_email)
-  end
-
-  def self.average_spend(_email)
-  end
-
-  def self.most_loyal
-  end
-
-  def self.most_sold
-  end
-
-end
 
 case action
   when "find_user_id"
-    app_class.find_user_id(customer_email)
+    app_instance.find_user_id(customer_email)
   when "total_spend"
-    app_class.total_spend(customer_email)
+    app_instance.total_spend(customer_email)
   when "average_spend"
-    app_class.average_spend(customer_email)
+    app_instance.average_spend(customer_email)
   when "most_loyal"
-    app_class.most_loyal
+    app_instance.most_loyal
   when "most_sold"
-    app_class.most_sold
+    app_instance.most_sold
   else
     puts "wrong method name"
 end
