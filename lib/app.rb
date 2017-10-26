@@ -1,13 +1,12 @@
 #!/usr/bin/env ruby
 
-
-
 customer_email = ARGV[1].gsub(/\[|\]/, '').downcase
 action = ARGV[0]
 app_class = CustomerTracker
 
 class CustomerTracker
   def self.find_user_id(email)
+    get_data
     users_hash = {"guy@g.com"=>"abcdefg"}
     puts users_hash[email]
   end
