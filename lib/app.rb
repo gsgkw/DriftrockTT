@@ -7,14 +7,14 @@ app_class = CustomerTracker
 class CustomerTracker
   def self.find_user_id(email)
     get_data
-    users_hash = {"guy@g.com"=>"abcdefg"}
+    users_hash = { "guy@g.com" => "abcdefg" }
     puts users_hash[email]
   end
 
-  def self.total_spend(email)
+  def self.total_spend(_email)
   end
 
-  def self.average_spend(email)
+  def self.average_spend(_email)
   end
 
   def self.most_loyal
@@ -24,7 +24,6 @@ class CustomerTracker
   end
 
 end
-
 
 case action
   when "find_user_id"

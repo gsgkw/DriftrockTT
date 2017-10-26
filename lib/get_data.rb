@@ -1,7 +1,6 @@
 require 'JSON'
 require 'net/http'
 
-
 class GetUserData
   attr_reader :users
 
@@ -14,7 +13,7 @@ class GetUserData
 
   def user_data
     @users = []
-    @users = @data_fetcher.get_available_data(@users_end, @users, @api)
+    @users = @data_fetcher.get_available(@users_end, @users, @api)
   end
 
 end
@@ -31,20 +30,17 @@ class GetPurchasesData
 
   def purchases_data
     @purchases = []
-    @purchases = @data_fetcher.get_available_data(@purchases_end, @purchases, @api)
+    @purchases = @data_fetcher.get_available(@purchases_end, @purchases, @api)
   end
 end
-
-
-
 
 class DataFetcher
 
   def self.no_more_records?(page, records, received)
-    page*records > received.count
+    page * records > received.count
   end
 
-  def self.get_available_data(destination, local_array, api)
+  def self.get_available(destination, local_array, api)
     received_records = local_array
     page = 0
     records = 1000
@@ -57,8 +53,6 @@ class DataFetcher
 
 end
 
-
-
 class APICall
 
   @hash_key = 'data'
@@ -68,13 +62,13 @@ class APICall
   end
 
   def self.set_uri(destination, page, records)
-    URI("https://driftrock-dev-test-2.herokuapp.com/#{destination}?per_page=#{records}&page=#{page}")
+    address = "https://driftrock-dev-test-2.herokuapp.com"
+    URI("#{address}/#{destination}?per_page=#{records}&page=#{page}")
   end
 
   def self.get_and_parse(destination, page, records)
     json_data = get_json(set_uri(destination, page, records))
     JSON.parse(json_data)[@hash_key]
   end
-
 
 end
