@@ -2,12 +2,8 @@
 
 class SpendTracker
   def initialize(load_purchases: GetPurchasesData.new)
-    @load_purchases = load_purchases
+    @load_purchases = load_purchases.purchases_data
     @purchases = []
-  end
-
-  def load_purchases_data
-    @load_purchases.purchases_data
   end
 
   def find_purchases(array, id)
@@ -21,8 +17,8 @@ class SpendTracker
   end
 
   def total_spend(id)
-    @purchases = find_purchases(load_purchases_data, id)
-    return sum_spent(@purchases)
+    @purchases = find_purchases(@load_purchases, id)
+    p sum_spent(@purchases)
   end
 
   def average_spend(id)
