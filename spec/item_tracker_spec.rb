@@ -1,7 +1,6 @@
-require 'loyalty_tracker'
-require 'get_data'
+require 'item_tracker'
 
-describe LoyaltyTracker do
+describe ItemTracker do
   let(:load_purchases_double) { double :GetPurchasesData }
   subject { described_class.new(load_purchases: load_purchases_double) }
 
@@ -16,7 +15,7 @@ describe LoyaltyTracker do
                                     }
   end
 
-  it 'can display most frequent customer' do
-    expect(subject.find_most_frequent).to eq "12DF-2324-GA2D-31RT"
+  it 'can display most frequent item' do
+    expect(subject.find_most_frequent).to eq "A nice cup of tea"
   end
 end

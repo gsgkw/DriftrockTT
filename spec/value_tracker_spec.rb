@@ -3,7 +3,8 @@ require 'get_data'
 
 describe ValueTracker do
   let(:load_purchases_double) { double :GetPurchasesData }
-  subject { described_class.new(load_purchases: load_purchases_double) }
+  let(:user_finder_double) { double :UserFinder }
+  subject { described_class.new(purchases: load_purchases_double, find_email: user_finder_double) }
 
   before do
     allow(load_purchases_double).to receive(:purchases_data) {

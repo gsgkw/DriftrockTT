@@ -1,4 +1,4 @@
-class LoyaltyTracker
+class ItemTracker
   def initialize(load_purchases: GetPurchasesData.new)
     @load_purchases = load_purchases.purchases_data
     @purchases = []
@@ -10,7 +10,7 @@ class LoyaltyTracker
 
   def find_most_frequent
     freq = Hash.new(0)
-    @load_purchases.each { |hash| freq[hash["user_id"]] += 1 }
+    @load_purchases.each { |hash| freq[hash["item"]] += 1 }
     return_most_frequent_key(freq)
   end
 
