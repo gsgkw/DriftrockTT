@@ -2,8 +2,8 @@
 
 class UserFinder
 
-  def initialize(load_user: GetUserData.new)
-    @load_user = load_user
+  def initialize(load_users: GetUserData.new)
+    @load_users = load_users
   end
 
   def find_user(array, email)
@@ -13,7 +13,7 @@ class UserFinder
   end
 
   def load_users_array
-    @load_user.user_data
+    @load_users.user_data
   end
 
   def find_user_id(email)
@@ -24,12 +24,20 @@ class UserFinder
   end
 end
 
-class UserComparer
-  def most_loyal
+class EmailFinder
+  def initialize(load_users: GetUserData.new)
+    p @load_users = load_users.user_data
   end
-end
 
-class PurchasesTracker
-  def most_sold
+  def find_user(array, user_id)
+    array.find do |user_hash|
+      user_hash["id"] == user_id
+    end
+  end
+
+  def find_email(user_id)
+    user = find_user(@load_users, user_id)
+    p user["email"]
+    return user["email"]
   end
 end

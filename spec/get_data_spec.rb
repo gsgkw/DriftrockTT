@@ -67,11 +67,3 @@ describe DataFetcher do
   }])
   end
 end
-
-describe APICall do
-  let(:subject) { described_class }
-
-  it 'can return user id from email' do
-    expect(subject).to eq "12DF-2324-GA2D-31RT"
-  end
-end
