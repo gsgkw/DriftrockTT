@@ -7,17 +7,10 @@ describe ValueTracker do
   subject { described_class.new(purchases: load_purchases_double, find_email: user_finder_double) }
 
   before do
-    allow(load_purchases_double).to receive(:purchases_data) {
-                                      [{ "user_id" => "12DF-2324-GA2D-31RT", "item" => "Huge pineapple pizza", "spend" => "19.99"
-                                      }, { "user_id" => "12DF-2324-GA2D-31RT", "item" => "A nice cup of tea", "spend" => "2.99"
-                                      }, { "user_id" => "12DF-2324-GA2D-31RT", "item" => "A nice cup of tea", "spend" => "2.99"
-                                      }, { "user_id" => "1234-2324-GA2D-31RT", "item" => "Huge pineapple pizza", "spend" => "99.99"
-                                      }, { "user_id" => "1234-2324-GA2D-31RT", "item" => "A nice cup of tea", "spend" => "2.99"
-                                      }]
-                                    }
+    allow(load_purchases_double).to receive(:purchases_data) { purchases_hash_array }
   end
 
   it 'can display most valuable customer id' do
-    expect(subject.find_most_user_id).to eq "1234-2324-GA2D-31RT"
+    expect(subject.find_most_valuable).to eq "1234-2324-GA2D-31RT"
   end
 end

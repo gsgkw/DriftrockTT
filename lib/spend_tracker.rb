@@ -18,7 +18,7 @@ class SpendTracker
 
   def total_spend(id)
     @purchases = find_purchases(@load_purchases, id)
-    p sum_spent(@purchases)
+    sum_spent(@purchases)
   end
 
   def average_spend(id)

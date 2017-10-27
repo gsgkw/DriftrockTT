@@ -1,31 +1,21 @@
 #!/usr/bin/env ruby
-require './spend_tracker.rb'
-require './user_finder.rb'
-require './get_data.rb'
-require './value_tracker.rb'
-require './loyalty_tracker.rb'
+require './controller.rb'
 
 customer_email = ARGV[1].gsub(/\[|\]/, '').downcase unless ARGV[1].nil?
 action = ARGV[0]
-spender = SpendTracker.new
-users = UserFinder.new
-loyal = LoyaltyTracker.new
-value = ValueTracker.new
+
 
 case action
-  when "find_user_id"
-    users.find_user_id(customer_email)
   when "total_spend"
-    id = users.find_user_id(customer_email)
-    spender.total_spend(id)
+    Controller.total_spend(customer_email)
   when "average_spend"
-    spender.average_spend(customer_email)
+    Controller.average_spend(customer_email)
   when "most_loyal"
-    loyal.find_most_frequent
+    Controller.most_loyal
   when "highest_value"
-    value.find_most_valuable
+    Controller.highest_value
   when "most_sold"
-    value.find_most_valuable
+    Controller.most_sold
   else
-    puts "wrong method name"
+    Controller.error
 end
