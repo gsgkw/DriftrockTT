@@ -1,6 +1,6 @@
 # Driftrock Tech Test
 
-##Requirements
+##Requirements##
 
 Create a script that can be run from the command line and can answer the questions listed below. The script accepts one parameter to specify which question it will answer and in some cases an optional argument. The script will print the answer to the console output.
 
@@ -13,7 +13,7 @@ Create a script that can be run from the command line and can answer the questio
 - most_sold: What is the name of the most sold item?
 
 
-##Solution
+##Solution##
 
 The script can be run from the command line. Arguments passed to the script from the command line via ARGV trigger the appropriate methods in the Controller module.
 
@@ -21,12 +21,12 @@ The solution is slow when working with the 40001 purchase records and 11001 user
 
 The API call, data fetching and analysis have been split out into separate classes. I have tried to keep the classes small, without duplicating code between them.
 
-###architecture
+###Architecture###
 
 As a rough guide: app.rb acts as the command line interface; it talks to controller.rb, which instantiates and calls methods on the appropriate classes. get_data.rb contains all the classes pertaining to the API call and data parsing. All other files are named appropriately and do, hopefully, what it says on the tin.
 
 
-###Setup and Use
+###Setup and Use###
 
 Run bundle install
 
@@ -35,7 +35,7 @@ Navigate to lib folder and run in command line
   ruby app.rb COMMAND PARAMETERS
 
 
-###results
+###Results###
 
 ruby app.rb most_sold
 "Enormous Leather Bottle"
@@ -52,7 +52,7 @@ ruby app.rb average_spend "bogisich_judah@hilperttromp.biz"
 ruby app.rb total_spend "bogisich_judah@hilperttromp.biz"
 993.32
 
-###tests
+###Tests###
 
 run tests with RSPEC
 
@@ -83,7 +83,7 @@ UserFinder
 ValueTracker
   can display most valuable customer id
 
-###comments
+##Comments##ß
 
 Unsure is this is my error or a problem with the test but the keys in the example hash provided are symbols, whereas the keys returned by the API were strings.
 
