@@ -4,7 +4,6 @@ require './controller.rb'
 customer_email = ARGV[1].gsub(/\[|\]/, '').downcase unless ARGV[1].nil?
 action = ARGV[0]
 
-
 case action
   when "total_spend"
     Controller.total_spend(customer_email)

@@ -1,6 +1,5 @@
 require 'get_data'
 
-
 describe 'getting data' do
   let(:api_double) { double :APICall }
   let(:data_fetcher_double) { double :DataFetcher }

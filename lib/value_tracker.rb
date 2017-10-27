@@ -1,12 +1,12 @@
 
 
 class ValueTracker
-  def initialize(purchases: GetPurchasesData.new, find_email: UserFinder.new)
+  def initialize(purchases: GetPurchasesData.new)
     @purchases = purchases.purchases_data
   end
 
   def return_most_valuable_id(hash)
-    hash.sort_by { |key, value| value }.reverse.first[0]
+    hash.sort_by { |_key, value| value }.reverse.first[0]
   end
 
   def find_most_valuable

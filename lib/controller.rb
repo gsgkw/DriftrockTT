@@ -17,7 +17,7 @@ class Controller
     p SpendTracker.new.average_spend(id)
   end
 
-   def self.most_loyal
+  def self.most_loyal
     id = LoyaltyTracker.new.find_most_frequent
     p UserFinder.new.find_email_by_id(id)
   end

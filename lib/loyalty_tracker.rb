@@ -5,7 +5,7 @@ class LoyaltyTracker
   end
 
   def return_most_frequent_key(hash)
-    hash.sort_by { |key, value| value }.reverse.first[0]
+    hash.sort_by { |_key, value| value }.reverse.first[0]
   end
 
   def find_most_frequent
