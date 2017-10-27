@@ -85,7 +85,7 @@ ValueTracker
 
 ## Comments
 
-Unsure is this is my error or a problem with the test but the keys in the example hash provided are symbols, whereas the keys returned by the API were strings.
+Unsure is this is my error or a problem with the test but the keys in the example hash provided were symbols, whereas the keys returned by the API are strings.
 
 {
 "data": [
