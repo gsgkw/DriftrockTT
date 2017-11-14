@@ -10,7 +10,7 @@ class UserFinder
   end
 
   def load_users_array
-    @users = @load_users.user_data
+    p @users = @load_users.user_data
   end
 
   def find_user(key, known_info)

@@ -1,5 +1,5 @@
 require 'value_tracker'
-require 'get_data'
+require 'get_user_data'
 
 describe ValueTracker do
   let(:load_purchases_double) { double :GetPurchasesData }

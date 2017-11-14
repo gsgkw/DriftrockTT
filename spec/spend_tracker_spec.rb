@@ -1,5 +1,5 @@
 require 'spend_tracker'
-require 'get_data'
+require 'get_user_data'
 
 describe SpendTracker do
   let(:load_purchases_double) { double :GetPurchasesData }

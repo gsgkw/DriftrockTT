@@ -1,5 +1,6 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'pry'
 
 def user_hash_array
   [{ "id" => "12DF-2324-GA2D-31RT", "first_name" => "Drift", "last_name" => "Rock",
