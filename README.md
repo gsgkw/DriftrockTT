@@ -85,7 +85,7 @@ ValueTracker
 
 ## Comments
 
-Unsure is this is my error or a problem with the test but the keys in the example hash provided are symbols, whereas the keys returned by the API were strings.
+Unsure if this is to do with my parsing or a problem with the test but the keys in the example hash provided were symbols, whereas the keys returned by the API are strings.
 
 {
 "data": [
@@ -96,11 +96,9 @@ Unsure is this is my error or a problem with the test but the keys in the exampl
 ... ]
 }
 
+vs. 
 
 {
 "data": [
-{
-"user_id": "12DF-2324-GA2D-31RT", "item": "Huge pineapple pizza", "spend": "19.99"
-}, {"user_id": "12DF-2324-GA2D-31RT", "item": "A nice cup of tea", "spend": "2.99"
-} ]
+{"id"=>"3ASC-MN9C-JPUU-5AKX", "first_name"=>"Nico", "last_name"=>"Rodriguez", "phone"=>"816-682-1552 x540", "email"=>"rodriguez.nico@hamill.co"}, {"id"=>"0G2M-BGVV-I4CY-PI20", "first_name"=>"Caesar", "last_name"=>"Metz", "phone"=>"574.732.0454", "email"=>"caesar_metz@osinski.name"}, {"id"=>"MNYR-CMZZ-1VR0-OY5R", "first_name"=>"Roslyn", "last_name"=>"Schowalter", "phone"=>"191.636.9911", "email"=>"schowalter.roslyn@moen.name"}]
 }
