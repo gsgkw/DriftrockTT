@@ -1,4 +1,4 @@
-# Driftrock Tech Test
+# Driftrock
 
 ## Requirements
 
@@ -83,22 +83,3 @@ UserFinder
 ValueTracker
   can display most valuable customer id
 
-## Comments
-
-Unsure if this is to do with my parsing or a problem with the test but the keys in the example hash provided were symbols, whereas the keys returned by the API are strings.
-
-{
-"data": [
-{
-"id": "12DF-2324-GA2D-31RT", "first_name": "Drift", "last_name": "Rock",
-"phone": "0-200-100-1234", "email": "drift.rock@email.com"
-},
-... ]
-}
-
-vs. 
-
-{
-"data": [
-{"id"=>"3ASC-MN9C-JPUU-5AKX", "first_name"=>"Nico", "last_name"=>"Rodriguez", "phone"=>"816-682-1552 x540", "email"=>"rodriguez.nico@hamill.co"}, {"id"=>"0G2M-BGVV-I4CY-PI20", "first_name"=>"Caesar", "last_name"=>"Metz", "phone"=>"574.732.0454", "email"=>"caesar_metz@osinski.name"}, {"id"=>"MNYR-CMZZ-1VR0-OY5R", "first_name"=>"Roslyn", "last_name"=>"Schowalter", "phone"=>"191.636.9911", "email"=>"schowalter.roslyn@moen.name"}]
-}
